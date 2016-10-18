@@ -1,0 +1,2185 @@
+Sensor.SetMode(1,0)
+BO = 0
+P = 0
+next_letter = "True"
+A = 0
+B = 0
+X = 0
+T = 0
+
+For i =  0 to 100 
+  O[i] = 0
+EndFor
+
+
+b0[0] =2 
+b0[1] =1
+b0[2] =1 
+b0[3] =1 
+b0[4] =2 
+b0[5] =0 
+
+'a
+b1[0] = 1
+b1[1] = 2
+b1[2] = 0
+b1[3] = 0
+b1[4] = 0
+b1[5] = 0
+
+'б
+b2[0] = 2
+b2[1] = 1
+b2[2] = 1
+b2[3] = 1
+b2[4] = 0
+b2[5] = 0
+
+'в
+b3[0] = 1
+b3[1] = 2
+b3[2] = 2
+b3[3] = 0
+b3[4] = 0
+b3[5] = 0
+
+'г
+b4[0] = 2
+b4[1] = 2
+b4[2] = 1
+b4[3] = 0
+b4[4] = 0
+b4[5] = 0
+
+'д
+b5[0] = 2
+b5[1] = 1
+b5[2] = 1
+b5[3] = 0
+b5[4] = 0
+b5[5] = 0
+
+'е
+b6[0] = 1
+b6[1] = 0
+b6[2] = 0
+b6[3] = 0
+b6[4] = 0
+b6[5] = 0
+
+'ж
+b7[0] = 1
+b7[1] = 1
+b7[2] = 1
+b7[3] = 2
+b7[4] = 0
+b7[5] = 0
+
+'з
+b8[0] = 2
+b8[1] = 2
+b8[2] = 1
+b8[3] = 1
+b8[4] = 0
+b8[5] = 0
+
+'и
+b9[0] = 1
+b9[1] = 1
+b9[2] = 0
+b9[3] = 0
+b9[4] = 0
+b9[5] = 0
+
+'й
+b10[0] = 1
+b10[1] = 2
+b10[2] = 2
+b10[3] = 2
+b10[4] = 0
+b10[5] = 0
+
+'к
+b11[0] = 2
+b11[1] = 1
+b11[2] = 2
+b11[3] = 0
+b11[4] = 0
+b11[5] = 0
+
+'л
+b12[0] = 1
+b12[1] = 2
+b12[2] = 1
+b12[3] = 1
+b12[4] = 0
+b12[5] = 0
+
+'м
+b13[0] = 2
+b13[1] = 2
+b13[2] = 0
+b13[3] = 0
+b13[4] = 0
+b13[5] = 0
+
+'м
+b14[0] = 2
+b14[1] = 1
+b14[2] = 0
+b14[3] = 0
+b14[4] = 0
+b14[5] = 0
+
+'о
+b15[0] = 2
+b15[1] = 2
+b15[2] = 2
+b15[3] = 0
+b15[4] = 0
+b15[5] = 0
+
+'п
+b16[0] = 1
+b16[1] = 2
+b16[2] = 2
+b16[3] = 1
+b16[4] = 0
+b16[5] = 0
+
+'р
+b17[0] = 1
+b17[1] = 2
+b17[2] = 1
+b17[3] = 0
+b17[4] = 0
+b17[5] = 0
+
+'с
+b18[0] = 1
+b18[1] = 1
+b18[2] = 1
+b18[3] = 0
+b18[4] = 0
+b18[5] = 0
+
+'т
+b19[0] = 2
+b19[1] = 0
+b19[2] = 0
+b19[3] = 0
+b19[4] = 0
+b19[5] = 0
+
+'у
+b20[0] = 1
+b20[1] = 1
+b20[2] = 2
+b20[3] = 0
+b20[4] = 0
+b20[5] = 0
+
+'Ф
+b21[0] = 1
+b21[1] = 1
+b21[2] = 2
+b21[3] = 1
+b21[4] = 0
+b21[5] = 0
+
+'х
+b22[0] = 1
+b22[1] = 1
+b22[2] = 1
+b22[3] = 1
+b22[4] = 0
+b22[5] = 0
+
+'ц
+b23[0] = 2
+b23[1] = 1
+b23[2] = 2
+b23[3] = 1
+b23[4] = 0
+b23[5] = 0
+
+'ч
+b24[0] = 2
+b24[1] = 2
+b24[2] = 2
+b24[3] = 1
+b24[4] = 0
+b24[5] = 0
+
+'ш
+b25[0] = 2
+b25[1] = 2
+b25[2] = 2
+b25[3] = 2
+b25[4] = 0
+b25[5] = 0
+
+'щ
+b26[0] = 2
+b26[1] = 2
+b26[2] = 1
+b26[3] = 2
+b26[4] = 0
+b26[5] = 0
+
+'ъ
+b27[0] = 1
+b27[1] = 2
+b27[2] = 2
+b27[3] = 1
+b27[4] = 2
+b27[5] = 1
+
+'ы
+b28[0] = 2
+b28[1] = 1
+b28[2] = 2
+b28[3] = 2
+b28[4] = 0
+b28[5] = 0
+
+'ь
+b29[0] = 2
+b29[1] = 1
+b29[2] = 1
+b29[3] = 2
+b29[4] = 0
+b29[5] = 0
+
+'э
+b30[0] = 1
+b30[1] = 1
+b30[2] = 2
+b30[3] = 1
+b30[4] = 1
+b30[5] = 0
+
+'ю
+b31[0] = 1
+b31[1] = 1
+b31[2] = 2
+b31[3] = 2
+b31[4] = 0
+b31[5] = 0
+
+'я
+b32[0] = 1
+b32[1] = 2
+b32[2] = 1
+b32[3] = 2
+b32[4] = 0
+b32[5] = 0
+
+Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/0")
+LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/0")
+Speaker.Wait()
+
+LCD.Clear()
+
+Sub BOprint
+  i = 0
+  While O[i] <> 0 
+    If O[i] <> 0 Then
+      i = i + 1
+    EndIf    
+  EndWhile
+  O[i] = BO
+EndSub
+
+Sub Clear
+  i = 0
+  While O[i] <> 0 
+    O[i] = O[i+1]
+    i = i + 1    
+  EndWhile  
+EndSub  
+
+Sub Printer
+  While  "True"
+    If O[0] = 1 Then 
+      b1()
+      Clear()
+    EndIf
+    If O[0] = 2 Then 
+      b2()     
+      Clear()
+    EndIf
+    If O[0] = 3 Then 
+      b3()
+      Clear()
+    EndIf  
+    If O[0] = 4 Then 
+      b4()
+      Clear()
+    EndIf  
+    If O[0] = 5 Then 
+      b5()
+      Clear()
+    EndIf  
+    If O[0] = 6 Then 
+      b6()
+      Clear()
+    EndIf  
+    If O[0] = 7 Then 
+      b7()
+      Clear()
+    EndIf  
+    If O[0] = 8 Then 
+      b8()
+      Clear()
+    EndIf  
+    If O[0] = 9 Then 
+      b9()
+      Clear()
+    EndIf  
+    If O[0] = 10 Then 
+      b10()
+      Clear()
+    EndIf  
+    If O[0] = 11 Then 
+      b11()
+      Clear()
+    EndIf    
+    If O[0] = 12 Then 
+      b12()
+      Clear()
+    EndIf    
+    If O[0] = 13 Then 
+      b13()
+      Clear()
+    EndIf    
+    If O[0] = 14 Then 
+      b14()
+      Clear()
+    EndIf    
+    If O[0] = 15 Then 
+      b15()
+      Clear()
+    EndIf    
+    If O[0] = 16 Then 
+      b16()
+      Clear()
+    EndIf    
+    If O[0] = 17 Then 
+      b17()
+      Clear()
+    EndIf    
+    If O[0] = 18 Then 
+      b18()
+      Clear()
+    EndIf    
+    If O[0] = 19 Then 
+      b19()
+      Clear()
+    EndIf    
+    If O[0] = 20 Then 
+      b20()
+      Clear()
+    EndIf    
+    If O[0] = 21 Then 
+      b21()
+      Clear()
+    EndIf   
+    If O[0] = 22 Then 
+      b22()
+      Clear()
+    EndIf   
+    If O[0] = 23 Then 
+      b23()
+      Clear() 
+    EndIf  
+    If O[0] = 24 Then 
+      b24()
+      Clear()
+    EndIf 
+    If O[0] = 25 Then 
+      b25()
+      Clear()
+    EndIf 
+    If O[0] = 26 Then 
+      b26()
+      Clear()
+    EndIf 
+    If O[0] = 27 Then 
+      b27()
+      Clear()
+    EndIf 
+    If O[0] = 28 Then 
+      b28()
+      Clear()
+    EndIf 
+    If O[0] = 29 Then 
+      b29()
+      Clear()
+    EndIf 
+    If O[0] = 30 Then 
+      b30()
+      Clear()
+    EndIf 
+    If O[0] = 31 Then
+      b31()
+      Clear() 
+    EndIf 
+    If O[0] = 32 Then 
+      b32()
+      Clear()
+    EndIf 
+  EndWhile
+EndSub
+
+Thread.Run = Printer
+
+XM = 0
+YM = 0
+pen = "False"
+kM = 1
+
+Sub PenMotor
+  tM = EV3.Time
+  regulator = "True"
+  If pen = "True" Then
+    PM = 150
+  Else
+    PM = 0
+  EndIf
+  While regulator
+    eM = PM - Motor.GetCount("B")
+    vM = eM * kM
+    Motor.Start("B",vM)
+    If Math.Abs(Motor.GetCount("B") - PM) < 5 Then
+      regulator = "False"
+    EndIf
+    If  EV3.Time - tM > 1000 Then
+      regulator = "False"
+    EndIf  
+  EndWhile
+  Motor.Stop("B","True")
+EndSub
+
+Sub MoveX
+  If  XM > 0 Then
+    Motor.Move("C",-50,XM,"True")
+  Else
+    Motor.Move("C",50,-1 * XM,"True")
+  EndIf  
+  
+EndSub
+
+
+Sub MoveY
+  If  YM > 0 Then
+    Motor.Move("A",50,YM,"True")
+  Else
+    Motor.Move("A",-50,-1 * YM,"True")
+  EndIf  
+EndSub
+
+
+Sub MoveXY
+  If YM > 0 Then
+    For j = 1 To XM / 5
+      Motor.Move("A",50,5,"True")
+      Motor.Move("C",-50,-5,"True")
+    EndFor  
+  Else
+    For j = 1 To XM / 5
+      Motor.Move("A",-50,-5,"True")
+      Motor.Move("C",-50,-5,"True")
+    EndFor      
+  EndIf
+  
+EndSub
+
+
+Sub b0
+  
+  XM = 300
+  MoveX()
+  
+EndSub
+'А
+Sub b1
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  MoveY()
+  
+  XM = 300
+  MoveX()  
+  
+  YM = -300
+  MoveY()
+  
+  pen = "False"
+  PenMotor() 
+  
+  YM = 150
+  MoveY()  
+  
+  pen = "False"
+  PenMotor()
+  
+  XM = -300
+  MoveX()   
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = 300
+  MoveX()
+  
+  pen = "False"
+  PenMotor()
+  
+  YM = -150
+  MoveY()
+  
+  XM = 100
+  MoveX()  
+  
+EndSub
+'Б
+Sub b2
+  YM = 300
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = -300
+  MoveX()
+  
+  YM = -300
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+  YM = 200
+  MoveY()
+  
+  XM = -300
+  MoveX()
+  
+  pen = "False"
+  PenMotor()
+  
+  XM = 400
+  MoveX()
+  
+  YM = -200
+  MoveY()
+  
+EndSub
+'В 
+Sub b3
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  MoveY()
+  
+  XM = 200
+  MoveX()
+  
+  YM = -150
+  MoveY()
+  
+  XM = -200
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 200
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = 100
+  MoveX() 
+  
+  YM = -150
+  MoveY()
+  
+  XM = -300
+  MoveX()  
+  
+  pen = "False"
+  PenMotor()
+  
+  XM = 400
+  MoveX()
+  
+EndSub
+'Г
+Sub b4
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  MoveY()  
+  
+  XM = 200
+  MoveX()  
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()    
+  
+  YM = -300
+  MoveY()  
+  
+EndSub  
+'Д  
+sub b5
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 50
+  MoveY()  
+  
+  XM = 300
+  MoveX()    
+  
+  YM = -50
+  MoveY()  
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = 50
+  MoveY()    
+  
+  XM = -50
+  MoveX()    
+  
+  pen = "True"
+  PenMotor()  
+  
+  YM = 250
+  MoveY()  
+  
+  XM = -200
+  MoveX()  
+  
+  YM = -250
+  MoveY()    
+  
+  pen = "False"
+  PenMotor()    
+  
+  YM = -50
+  MoveY()  
+  
+  XM = 350
+  MoveX()  
+  
+EndSub                 
+'Е
+Sub b6
+  
+  XM = 300
+  MoveX()
+  
+  YM = 300
+  MoveY() 
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = -300
+  MoveX()
+  
+  YM = -300
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+  pen = "False"
+  PenMotor()    
+  
+  YM = 150
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = -300
+  MoveX()
+  
+  pen = "False"
+  PenMotor()
+  
+  YM = -150
+  MoveY()
+  
+  XM = 400
+  MoveX()
+  
+EndSub  
+'Ж   
+Sub b7 
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  XM = 300
+  MoveXY()  
+  
+  pen = "False"
+  PenMotor()   
+  
+  XM = -300
+  MoveX()  
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  XM = 300  
+  MoveXY()  
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = -150
+  MoveX()   
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()   
+  
+  YM = -300
+  MoveY()  
+  
+  XM = 250
+  MoveX()     
+  
+EndSub  
+'З
+Sub  b8
+  
+  pen = "True"
+  PenMotor()  
+  
+  XM = 300
+  MoveX()       
+  
+  YM = 150
+  MoveY()    
+  
+  XM = -300
+  MoveX()   
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 300
+  MoveX()  
+  
+  pen = "True"
+  PenMotor()  
+  
+  YM = 150
+  MoveY()    
+  
+  XM = -300
+  MoveX()    
+  
+  pen = "False"
+  PenMotor()   
+  
+  XM = 400
+  MoveX() 
+  
+  YM = -300
+  MoveY()  
+  
+EndSub  
+'и
+Sub b9
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()  
+  
+  YM = 300
+  XM = 300
+  MoveXY()
+  
+  YM = -300
+  MoveY()  
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+EndSub                                                   
+'Й  
+Sub  b10
+  
+  YM = 300
+  MoveY()    
+  
+  XM = 200
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = -100
+  MoveX()
+  
+  pen = "False"
+  PenMotor()
+  
+  XM = -100
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()   
+  
+  YM = 300
+  XM = 300
+  MoveXY()  
+  
+  YM = -300
+  MoveY()     
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()  
+  
+EndSub  
+'К
+Sub b11
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()   
+  
+  YM = -150
+  MoveY() 
+  
+  pen = "True"
+  PenMotor()  
+  
+  YM = 150
+  XM = 150
+  MoveXY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = -150
+  MoveY() 
+  
+  XM = -150
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -150
+  XM = 150
+  MoveXY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub
+'Л
+Sub b12
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  XM = 300
+  MoveXY()
+  
+  YM = -300
+  MoveY() 
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub
+'М
+Sub b13
+  
+  pen = "True"
+  PenMotor()  
+  
+  YM = 300
+  MoveY()
+  
+  YM = -150
+  XM = 150
+  MoveXY()
+  
+  YM = 150
+  XM = 150
+  MoveXY()
+  
+  YM = -300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub
+'Н
+Sub b14
+  
+  pen = "True"
+  PenMotor()  
+  
+  YM = 300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()   
+  
+  YM = -150
+  MoveY()
+  
+  pen = "True"
+  PenMotor()  
+  
+  XM = 200
+  MoveX()
+  
+  pen = "False"
+  PenMotor()   
+  
+  YM = 150
+  MoveY()
+  
+  pen = "True"
+  PenMotor()  
+  
+  YM = -300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub
+'О
+Sub b15
+  
+  pen = "True"
+  PenMotor()  
+  
+  YM = 300
+  MoveY()
+  
+  XM = 200
+  MoveX()
+  
+  YM = -300
+  MoveY()
+  
+  XM = -200
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 300
+  MoveX()
+  
+EndSub
+
+
+'п
+Sub b16
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  MoveY()
+  
+  XM = 200
+  MoveX()
+  
+  YM = -300
+  MoveY()  
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+EndSub   
+
+'р
+Sub b17
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  MoveY()
+  
+  XM = 200
+  MoveX()
+  
+  YM = -150
+  MoveY()  
+  
+  XM = -200
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = -150
+  MoveY() 
+  
+  XM = 300
+  MoveX()
+EndSub   
+
+'с
+Sub b18
+  
+  YM = 300
+  MoveY()
+  
+  XM = 200
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = -200
+  MoveX()
+  
+  YM = -300
+  MoveY()
+  
+  XM = 200
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+EndSub  
+
+'т
+Sub b19
+  
+  YM = 300
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = -300
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 150
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 250
+  MoveX()
+EndSub  
+
+'у
+Sub b20
+  
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()  
+  
+  YM = -150
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+  pen = "False"
+  PenMotor() 
+  
+  YM = 150
+  MoveY()
+  
+  pen = "True"
+  PenMotor()  
+  
+  YM = -300
+  MoveY()
+  
+  XM = -300
+  MoveX()
+  
+  pen = "False"
+  PenMotor() 
+  
+  XM = 400
+  MoveX()
+  
+EndSub  
+
+'ф
+Sub b21
+  
+  YM = 300
+  MoveY()
+  
+  XM = 150
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = 150
+  MoveY()
+  
+  XM = 150
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = -300
+  MoveX()
+  
+  YM = 150
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+  YM = -150
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+  YM = -150
+  MoveY()
+  
+EndSub 
+
+'х
+Sub b22
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  XM = 300
+  MoveXY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = -300
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  XM = 300
+  MoveXY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub                                                   
+
+
+'ц
+Sub b23
+  
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -250
+  MoveY()
+  
+  XM = 250
+  MoveX()
+  
+  YM = 250
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = -250
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = 50
+  MoveX()
+  
+  YM = -50
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub  
+
+'ч
+Sub b24
+  
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -150
+  MoveY()
+  
+  XM = 200
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = 150
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub  
+
+'ш
+Sub b25
+  
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+  YM = 300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = -200
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 300
+  MoveX()
+  
+EndSub 
+
+
+'щ
+Sub b26
+  
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -250
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+  YM = 250
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = -200
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -250
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 200
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = 50
+  MoveX()
+  
+  YM = -50
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub 
+
+
+'ъ
+Sub b27
+  
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = 50
+  MoveX()
+  
+  YM = -300
+  MoveY()
+  
+  XM = 250
+  MoveX()
+  
+  YM = 150
+  MoveY()
+  
+  XM = -250
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = -150
+  MoveY()
+  
+  XM = 350
+  MoveX()
+  
+EndSub 
+
+
+'ы
+Sub b28
+  
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()
+  
+  XM = 250
+  MoveX()
+  
+  YM = 150
+  MoveY()
+  
+  XM = -250
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = 150
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub 
+
+'Ъ
+Sub b29
+  
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = -300
+  MoveY()
+  
+  XM = 250
+  MoveX()
+  
+  YM = 150
+  MoveY()
+  
+  XM = -250
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = -150
+  MoveY()
+  
+  XM = 350
+  MoveX()
+  
+EndSub 
+
+'э
+Sub b30
+  
+  YM = 300
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = 300
+  MoveX()
+  
+  YM = -300
+  MoveY()
+  
+  XM = -300
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = 150
+  MoveY()
+  
+  XM = 50
+  MoveX()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = 250
+  MoveX()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+  YM = -150
+  MoveY()
+  
+EndSub  
+
+
+'ю
+Sub b31
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = -150
+  MoveY()
+  
+  pen = "True"
+  PenMotor()
+  
+  XM = 100
+  MoveX()
+  
+  YM = 150
+  MoveY()
+  
+  XM = 200
+  MoveX()
+  
+  YM = -300
+  MoveY()
+  
+  XM = -200
+  MoveX()
+  
+  YM = 150
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  YM = -150
+  MoveY()
+  
+  XM = 300
+  MoveX()
+  
+EndSub 
+
+'я
+Sub b32
+  
+  pen = "True"
+  PenMotor()
+  
+  YM = 150
+  XM = 150
+  MoveXY()
+  
+  XM = -150
+  MoveX()
+  
+  YM = 150
+  MoveY()
+  
+  XM = 150
+  MoveX()
+  
+  YM = -300
+  MoveY()
+  
+  pen = "False"
+  PenMotor()  
+  
+  XM = 100
+  MoveX()
+  
+EndSub 
+
+
+
+
+While "True"
+  
+  m[0] = 0
+  m[1] = 0
+  m[2] = 0
+  m[3] = 0
+  m[4] = 0
+  m[5] = 0
+  
+  X = 0
+  P = EV3.Time
+  
+  While  next_letter
+    If Sensor.ReadPercent(1) > 50 Then
+      If A = 0 Then
+        A = EV3.Time
+        Speaker.Note(100,"E5",10000)
+        Program.Delay(50)
+      EndIf
+      P = EV3.Time  
+    EndIf 
+    
+    If Sensor.ReadPercent(1) = 0 And A > 0 Then
+      If B = 0 Then
+        B = EV3.Time
+        Speaker.Stop()
+        Program.Delay(50)
+      EndIf
+      P = EV3.Time 
+    EndIf
+    
+    If A > 0 And B > 0 Then
+      T = B - A
+      If T > 300 Then
+        m[X] = 2
+      Else
+        m[X] = 1
+      EndIf
+      A = 0
+      B = 0
+      X = X+1
+      P = EV3.Time
+    EndIf
+    
+    
+    If EV3.Time - P >= 2000 Or X > 5 Then 
+      next_letter = "False"
+    EndIf
+    
+    
+  EndWhile 
+  'LCD.Clear()
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b0[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    LCD.Clear()
+    Speaker.Tone(100,300,500)
+  EndIf  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b1[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b1")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b1")
+    BO = 1
+    BOprint()
+  EndIf  
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b2[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b2")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b2")
+    BO = 2
+    BOprint()
+  EndIf  
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b3[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b3")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b3")
+    BO = 3
+    BOprint()
+  EndIf   
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b4[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b4")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b4")
+    BO = 4
+    BOprint()
+  EndIf  
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b5[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b5")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b5")
+    BO = 5
+    BOprint()
+  EndIf    
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b6[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b6")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b6")
+    BO = 6
+    BOprint()
+  EndIf    
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b7[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b7")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b7")
+    BO = 7
+    BOprint()
+  EndIf    
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b8[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b8")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b8")
+    BO = 8
+    BOprint()
+  EndIf    
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b9[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b9")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b9")
+    BO = 9
+    BOprint()
+  EndIf    
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b10[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b10")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b10")
+    BO = 10
+    BOprint()
+  EndIf    
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b11[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b11")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b11")
+    BO = 11
+    BOprint()
+  EndIf      
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b12[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b12")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b12")
+    BO = 12
+    BOprint()
+  EndIf      
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b13[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b13")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b13")
+    BO = 13
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b14[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b14")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b14")
+    BO = 14
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b15[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b15")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b15")
+    BO = 15
+    BOprint()
+  EndIf      
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b16[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b16")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b16")
+    BO = 16
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b17[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b17")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b17")
+    BO = 17
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b18[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b18")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b18")
+    BO = 18
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b19[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b19")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b19")
+    BO = 19
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b20[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b20")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b20")
+    BO = 20
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b21[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b21")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b21")          
+    BO = 21
+    BOprint()
+    
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b22[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b22")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b22")
+    BO = 22
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b23[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b23")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b23")
+    BO = 23
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b24[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b24")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b24")
+    BO = 24
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b25[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b25")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b25")
+    BO = 25
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b26[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b26")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b26")
+    BO = 26
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b27[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b27")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b27")
+    BO = 27
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b28[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b28")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b28")
+    BO = 28
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b29[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b29")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b29")
+    BO = 29
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b30[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b30")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b30")
+    BO = 30
+    BOprint()
+  EndIf     
+  
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b31[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b31")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b31")
+    BO = 31
+    BOprint()
+  EndIf     
+  
+  h = "True"
+  For I = 0 To 5  
+    If  m[i] <> b32[i] Then
+      h = "False"
+    EndIf    
+  EndFor
+  If h = "True" Then
+    Speaker.Play(100,"/home/root/lms2012/prjs/EV3Telegraph/b32")
+    LCD.BmpFile(1,0,0,"/home/root/lms2012/prjs/EV3Telegraph/b32")
+    BO = 32
+    BOprint()
+  EndIf     
+  
+  Program.Delay(1000) 
+  
+  next_letter = "True"
+EndWhile  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
